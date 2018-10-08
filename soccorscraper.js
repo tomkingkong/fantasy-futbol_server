@@ -9,16 +9,23 @@ nightmare
   .goto('https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_squads')
   .wait(500)
   .evaluate(() => {
-    const datas = $('.mw-parser-output')
-      .find('h3')
+    let countryNames = $('.mw-parser-output')
+      .children('h3')
       .find('.mw-headline')
-      .text();
-
-    return datas;
+      .text()
+      .split(/(?=[A-Z])/)
+      .map(title => {
+        return { country: title };
+      });
+    return countryNames;
   })
   .end()
   .then(result => {
-    fs.writeFile('./countryNames.js', JSON.stringify(result), function(err) {});
+    fs.writeFile(
+      './countryNames.json',
+      JSON.stringify(result, null, 4),
+      function(err) {}
+    );
     console.log(result);
   })
   .catch(error => {
