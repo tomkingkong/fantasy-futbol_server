@@ -70,10 +70,21 @@ app.get('/', (request, response) => {
   });
 
   players.forEach(player => {
+    const countryObj = { name: player.Nationality };
+
     database('players')
-      .insert(player, 'id')
+      .insert(JSON.stringify(player), 'id')
       .then(player => {
         response.status(201).json({ id: player[0] });
+      })
+      .catch(error => {
+        response.status(500).json({ error });
+      });
+
+    database('countries')
+      .insert(countryObj, 'id')
+      .then(country => {
+        response.status(201).json({ id: country[0] });
       })
       .catch(error => {
         response.status(500).json({ error });
