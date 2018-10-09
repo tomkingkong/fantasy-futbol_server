@@ -68,7 +68,6 @@
     {
         "country": "South Korea"
     },
-    
     {
         "country": "Sweden"
     },
@@ -95,20 +94,5 @@
     },
     {
         "country": "Senegal"
-    },
-    {
-        "country": "Age"
-    },
-    {
-        "country": "Player representation by league system"
-    },
-    {
-        "country": "Player representation by club"
-    },
-    {
-        "country": "Player representation by club confederation"
-    },
-    {
-        "country": "Coaches representation by country"
     }
 ]
