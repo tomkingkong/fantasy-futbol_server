@@ -18,3 +18,11 @@ app.get('/api/v1/countries', (request, response) => {
     });
 });
 
+app.get('/api/v1/players', (request, response) => {
+  database('players')
+    .then(players => response.status(200).json(players))
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
