@@ -10,3 +10,11 @@ app.use(bodyparser.json());
 
 const port = process.env.PORT || 3000;
 
+app.get('/api/v1/countries', (request, response) => {
+  database('countries')
+    .then(countries => response.status(200).json(countries))
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
