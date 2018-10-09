@@ -30,3 +30,6 @@ app.get('api/v1/countries/:id', (request, response) => {
   database('countries').where('id', id);
 });
 
+app.listen(port, () => {
+  console.log('server is listening on 3000');
+});
