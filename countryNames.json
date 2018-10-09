@@ -1,114 +1,98 @@
 [
-    {
-        "country": "Egypt"
-    },
-    {
-        "country": "Russia"
-    },
-    {
-        "country": "Saudi Arabia"
-    }
-    {
-        "country": "Uruguay"
-    },
-    {
-        "country": "Iran"
-    },
-    {
-        "country": "Morocco"
-    },
-    {
-        "country": "Portugal"
-    },
-    {
-        "country": "Spain"
-    },
-    {
-        "country": "Australia"
-    },
-    {
-        "country": "Denmark"
-    },
-    {
-        "country": "France"
-    },
-    {
-        "country": "Peru"
-    },
-    {
-        "country": "Argentina"
-    },
-    {
-        "country": "Croatia"
-    },
-    {
-        "country": "Iceland"
-    },
-    {
-        "country": "Nigeria"
-    },
-    {
-        "country": "Brazil"
-    },
-    {
-        "country": "Costa Rica"
-    },
-    {
-        "country": "Serbia"
-    },
-    {
-        "country": "Switzerland"
-    },
-    {
-        "country": "Germany"
-    },
-    {
-        "country": "Mexico"
-    },
-    {
-        "country": "South Korea"
-    },
-    
-    {
-        "country": "Sweden"
-    },
-    {
-        "country": "Belgium"
-    },
-    {
-        "country": "England"
-    },
-    {
-        "country": "Panama"
-    },
-    {
-        "country": "Tunisia"
-    },
-    {
-        "country": "Colombia"
-    },
-    {
-        "country": "Japan"
-    },
-    {
-        "country": "Poland"
-    },
-    {
-        "country": "Senegal"
-    },
-    {
-        "country": "Age"
-    },
-    {
-        "country": "Player representation by league system"
-    },
-    {
-        "country": "Player representation by club"
-    },
-    {
-        "country": "Player representation by club confederation"
-    },
-    {
-        "country": "Coaches representation by country"
-    }
+  {
+    "country": "Egypt"
+  },
+  {
+    "country": "Russia"
+  },
+  {
+    "country": "Saudi Arabia"
+  },
+  {
+    "country": "Uruguay"
+  },
+  {
+    "country": "Iran"
+  },
+  {
+    "country": "Morocco"
+  },
+  {
+    "country": "Portugal"
+  },
+  {
+    "country": "Spain"
+  },
+  {
+    "country": "Australia"
+  },
+  {
+    "country": "Denmark"
+  },
+  {
+    "country": "France"
+  },
+  {
+    "country": "Peru"
+  },
+  {
+    "country": "Argentina"
+  },
+  {
+    "country": "Croatia"
+  },
+  {
+    "country": "Iceland"
+  },
+  {
+    "country": "Nigeria"
+  },
+  {
+    "country": "Brazil"
+  },
+  {
+    "country": "Costa Rica"
+  },
+  {
+    "country": "Serbia"
+  },
+  {
+    "country": "Switzerland"
+  },
+  {
+    "country": "Germany"
+  },
+  {
+    "country": "Mexico"
+  },
+  {
+    "country": "South Korea"
+  },
+  {
+    "country": "Sweden"
+  },
+  {
+    "country": "Belgium"
+  },
+  {
+    "country": "England"
+  },
+  {
+    "country": "Panama"
+  },
+  {
+    "country": "Tunisia"
+  },
+  {
+    "country": "Colombia"
+  },
+  {
+    "country": "Japan"
+  },
+  {
+    "country": "Poland"
+  },
+  {
+    "country": "Senegal"
+  }
 ]

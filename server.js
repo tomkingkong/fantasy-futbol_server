@@ -1,0 +1,146 @@
+const express = require('express');
+const bodyparser = require('body-parser');
+const fs = require('file-system');
+
+const env = process.env.NODE_ENV || 'development';
+const configure = require('./knexfile')[env];
+const database = require('knex')(configure);
+
+const app = express();
+app.use(bodyparser.json());
+
+const port = process.env.PORT || 3000;
+
+app.get('/', (request, response) => {
+  const playersData = JSON.parse(fs.readFileSync('./data/players.json'));
+  const resultKeys = [
+    'Name',
+    'Age',
+    'Nationality',
+    'Preferred positions',
+    'Club',
+    'Overall',
+    'Potential',
+    'Value',
+    'Wage',
+    'Acceleration',
+    'Aggression',
+    'Agility',
+    'Balance',
+    'Ball control',
+    'Composure',
+    'Crossing',
+    'Curve',
+    'Dribbling',
+    'Finishing',
+    'Free kick accuracy',
+    'Gk diving',
+    'Gk handling',
+    'Gk kicking',
+    'Gk positioning',
+    'Gk reflexes',
+    'Heading accuracy',
+    'Interceptions',
+    'Jumping',
+    'Long passing',
+    'Long shots',
+    'Marking',
+    'Penalties',
+    'Positioning',
+    'Reactions',
+    'Short passing',
+    'Shot power',
+    'Sliding tackle',
+    'Sprint speed',
+    'Stamina',
+    'Standing tackle',
+    'Strength',
+    'Vision',
+    'Volleys'
+  ];
+
+  const players = playersData.map(res => {
+    let obj = {};
+    resultKeys.forEach(key => {
+      if (res[key]) {
+        obj[key] = res[key];
+      }
+    });
+    return obj;
+  });
+
+  players.forEach(player => {
+    const countryObj = { name: player.Nationality };
+
+    database('players')
+      .insert(JSON.stringify(player), 'id')
+      .then(player => {
+        response.status(201).json({ id: player[0] });
+      })
+      .catch(error => {
+        response.status(500).json({ error });
+      });
+
+    database('countries')
+      .insert(countryObj, 'id')
+      .then(country => {
+        response.status(201).json({ id: country[0] });
+      })
+      .catch(error => {
+        response.status(500).json({ error });
+      });
+  });
+});
+
+app.get('/api/v1/countries', (request, response) => {
+  database('countries')
+    .then(countries => response.status(200).json(countries))
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.get('/api/v1/players', (request, response) => {
+  database('players')
+    .then(players => response.status(200).json(players))
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.get('/api/v1/countries/:id', (request, response) => {
+  const { id } = request.params;
+  database('countries')
+    .where('id', id)
+    .then(country => {
+      country.length
+        ? response.status(200).json(country)
+        : reponse.status(404).send({ error: 'country does not exist' });
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.get('/api/v1/players/:id', (request, response) => {
+  const { id } = request.params;
+  database('players')
+    .where('id', id)
+    .then(player => {
+      player.length
+        ? response.status(200).json(player)
+        : response.status(404).send({ error: 'player does not exist' });
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.post('/api/v1/players/:id', (request, response) => {
+  const player = request.body;
+  database(user);
+});
+
+app.listen(port, () => {
+  console.log('server is listening on 3000');
+});
