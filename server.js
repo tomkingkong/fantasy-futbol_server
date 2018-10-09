@@ -35,8 +35,22 @@ app.get('/api/v1/countries/:id', (request, response) => {
         ? response.status(200).json(country)
         : reponse.status(404).send({ error: 'country does not exist' });
     })
-    .catch(err => {
-      response.status(500).json({ err });
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.get('/api/v1/players/:id', (request, response) => {
+  const { id } = request.params;
+  database('players')
+    .where('id', id)
+    .then(player => {
+      player.length
+        ? response.status(200).json(player)
+        : response.status(404).send({ error: 'player does not exist' });
+    })
+    .catch(error => {
+      response.status(500).json({ error });
     });
 });
 
