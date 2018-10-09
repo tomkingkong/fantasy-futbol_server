@@ -26,3 +26,7 @@ app.get('/api/v1/players', (request, response) => {
     });
 });
 
+app.get('api/v1/countries/:id', (request, response) => {
+  database('countries').where('id', id);
+});
+
