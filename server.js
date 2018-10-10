@@ -13,10 +13,19 @@ app.use(bodyparser.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', (request, response) => {
-  const playerData = JSON.parse(fs.readFileSync('./data/scrapedPlayers3.json'));
+  const playersList = JSON.parse(fs.readFileSync('./data/players.json'));
 
-  const goalies = playerData.filter(player =>
-    player.Preferred_Positions.includes('GK')
+  const participatingPlayers = playersList.reduce((players, player) => {
+    countries.forEach(country => {
+      if (country.name === player.Nationality) {
+        players.push(player);
+      }
+    });
+    return players;
+  }, []);
+
+  const keys = Object.keys(participatingPlayers[0]).map(key =>
+    key.replace(/ /g, '_')
   );
 
   // const keys = Object.keys(playerData[0]).map(key => key.replace(/ /g, '_'));
