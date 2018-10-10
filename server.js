@@ -1,13 +1,17 @@
 const express = require('express');
-const bodyparser = require('body-parser');
+const bodyParser = require('body-parser');
 const fs = require('file-system');
+
 
 const env = process.env.NODE_ENV || 'development';
 const configure = require('./knexfile')[env];
 const database = require('knex')(configure);
 
 const app = express();
-app.use(bodyparser.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 const port = process.env.PORT || 3000;
 
@@ -125,6 +129,20 @@ app.put('/api/v1/users/:id/:player/players/:player_id', (req, res) => {
 		})
 	})
 })
+
+app.put('/api/v1/users/:id', (req, res) => {
+	console.log(req.body)
+			database('users')
+				.where('id', req.params.id)
+				.update(req.body)
+				.then(() => res.sendStatus(201))
+	.catch(error => {
+		res.status(500).json({
+			error
+		})
+	})
+})
+
 app.listen(port, () => {
 	console.log('server is listening on 3000');
 });
