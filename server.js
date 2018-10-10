@@ -13,78 +13,100 @@ app.use(bodyparser.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', (request, response) => {
-  const playerData = JSON.parse(fs.readFileSync('./data/scrapedPlayers3.json'));
+  const playersList = JSON.parse(fs.readFileSync('./data/players.json'));
 
-  const goalies = playerData.filter(player =>
-    player.Preferred_Positions.includes('GK')
+  const participatingPlayers = playersList.reduce((players, player) => {
+    countries.forEach(country => {
+      if (country.name === player.Nationality) {
+        players.push(player);
+      }
+    });
+    return players;
+  }, []);
+
+  const keys = Object.keys(participatingPlayers[0]).map(key =>
+    key.replace(/ /g, '_')
   );
 
-  // const keys = Object.keys(playerData[0]).map(key => key.replace(/ /g, '_'));
+  let newList = [];
 
-  // let newList = [];
+  for (let player in participatingPlayers) {
+    var newPlayers = {};
 
-  // for (let player in participatingPlayers) {
-  //   var newPlayers = {};
+    for (let key in keys) {
+      newPlayers[keys[key]] =
+        participatingPlayers[player][
+          Object.keys(participatingPlayers[player])[key]
+        ];
+    }
+    newList.push(newPlayers);
+  }
 
-  //   for (let key in keys) {
-  //     newPlayers[keys[key]] =
-  //       participatingPlayers[player][
-  //         Object.keys(participatingPlayers[player])[key]
-  //       ];
-  //   }
-  //   newList.push(newPlayers);
-  // }
+  let actualKeys = [
+    'Name',
+    'Age',
+    'Photo',
+    'Nationality',
+    'Club',
+    'Overall',
+    'Potential',
+    'Value',
+    'Wage',
+    'Acceleration',
+    'Aggression',
+    'Agility',
+    'Balance',
+    'Ball_control',
+    'Composure',
+    'Crossing',
+    'Curve',
+    'Dribbling',
+    'Finishing',
+    'Free_kick_accuracy',
+    'GK_diving',
+    'GK_handling',
+    'GK_kicking',
+    'GK_positioning',
+    'GK_reflexes',
+    'Heading_accuracy',
+    'Interceptions',
+    'Jumping',
+    'Long_passing',
+    'Long_shots',
+    'Marking',
+    'Penalties',
+    'Positioning',
+    'Reactions',
+    'Short_passing',
+    'Shot_power',
+    'Sliding_tackle',
+    'Sprint_speed',
+    'Stamina',
+    'Standing_tackle',
+    'Strength',
+    'Vision',
+    'Volleys',
+    'Preferred_Positions'
+  ];
 
-  fs.writeFileSync('./data/goalies.json', JSON.stringify(goalies, null, 4));
+  const players = newList.map(res => {
+    let obj = {};
+    actualKeys.forEach(key => {
+      if (res[key]) {
+        obj[key] = res[key];
+      }
+    });
+    obj['Positions'] = obj.Preferred_Positions;
+    delete obj.Preferred_Positions;
+    return obj;
+  });
+  console.log(players);
 
-  // let actualKeys = [
-  //   'Name',
-  //   'Age',
-  //   'Nationality',
-  //   'Club',
-  //   'Overall',
-  //   'Potential',
-  //   'Value',
-  //   'Wage',
-  //   'Acceleration',
-  //   'Aggression',
-  //   'Agility',
-  //   'Balance',
-  //   'Composure',
-  //   'Crossing',
-  //   'Curve',
-  //   'Dribbling',
-  //   'Finishing',
-  //   'Interceptions',
-  //   'Jumping',
-  //   'Marking',
-  //   'Penalties',
-  //   'Positioning',
-  //   'Reactions',
-  //   'Stamina',
-  //   'Strength',
-  //   'Vision',
-  //   'Volleys',
-  //   'Preferred_Positions'
-  // ];
-
-  // const players = newList.map(res => {
-  //   let obj = {};
-  //   actualKeys.forEach(key => {
-  //     if (res[key]) {
-  //       obj[key] = res[key];
-  //     }
-  //   });
-  //   obj['Positions'] = obj.Preferred_Positions;
-  //   delete obj.Preferred_Positions;
-  //   return obj;
-  // });
-
-  // fs.writeFileSync(
-  //   './data/goalies.json',
-  //   JSON.stringify(players, null, 4),
-  //   function(err) {}
-  // );
+  fs.writeFileSync(
+    './data/scrapedPlayers.json',
+    JSON.stringify(players, null, 4),
+    function(err) {}
+  );
 });
 
 app.get('/api/v1/countries', (request, response) => {
@@ -117,10 +139,10 @@ app.get('/api/v1/countries/:id', (request, response) => {
     });
 });
 
-app.get('/api/v1/players/:id', (request, response) => {
+app.get('/api/v1/players/:id/', (request, response) => {
   const { id } = request.params;
   database('players')
-    .where('id', id)
+    .where('country_id', id)
     .then(player => {
       player.length
         ? response.status(200).json(player)
@@ -129,11 +151,6 @@ app.get('/api/v1/players/:id', (request, response) => {
     .catch(error => {
       response.status(500).json({ error });
     });
-});
-
-app.post('/api/v1/players/:id', (request, response) => {
-  const player = request.body;
-  database(user);
 });
 
 app.listen(port, () => {

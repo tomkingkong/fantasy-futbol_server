@@ -1,4 +1,4 @@
-const playersData = require('../../../data/scrapedPlayers3.js');
+const playersData = require('../../../data/scrapedPlayers.js');
 const countries = require('../../../data/countries.js');
 
 const createPlayer = (knex, player, countryIds) => {
@@ -13,8 +13,9 @@ const createPlayer = (knex, player, countryIds) => {
       country_id: matchingId,
       Name: player.Name,
       Age: player.Age,
+      Photo: player.Photo,
       Nationality: player.Nationality,
-      Preferred_Positions: player.Preferred_Positions,
+      Positions: player.Positions,
       Club: player.Club,
       Overall: player.Overall,
       Potential: player.Potential,
