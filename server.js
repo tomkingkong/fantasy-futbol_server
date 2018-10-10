@@ -73,6 +73,22 @@ app.post('/api/v1/users', (request, response) => {
 		})
 })
 
+app.post('/api/v1/countries', (request, response) => {
+	const {name, group, flag} = request.body
+	const country = {name, group, flag}
+	database('countries').insert(country, 'id')
+		.then(country => {
+			response.status(201).json({
+				id: country[0]
+			})
+		})
+		.catch(error => {
+			res.status(500).json({
+				error
+			})
+		})
+})
+
 app.get('/api/v1/players/:id', (request, response) => {
 	const {
 		id
