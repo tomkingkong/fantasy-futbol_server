@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const fs = require('file-system');
+const countries = require('./data/countries.js');
 
 const env = process.env.NODE_ENV || 'development';
 const configure = require('./knexfile')[env];
@@ -12,84 +13,78 @@ app.use(bodyparser.json());
 const port = process.env.PORT || 3000;
 
 app.get('/', (request, response) => {
-  const playersData = JSON.parse(fs.readFileSync('./data/players.json'));
-  const resultKeys = [
-    'Name',
-    'Age',
-    'Nationality',
-    'Preferred positions',
-    'Club',
-    'Overall',
-    'Potential',
-    'Value',
-    'Wage',
-    'Acceleration',
-    'Aggression',
-    'Agility',
-    'Balance',
-    'Ball control',
-    'Composure',
-    'Crossing',
-    'Curve',
-    'Dribbling',
-    'Finishing',
-    'Free kick accuracy',
-    'Gk diving',
-    'Gk handling',
-    'Gk kicking',
-    'Gk positioning',
-    'Gk reflexes',
-    'Heading accuracy',
-    'Interceptions',
-    'Jumping',
-    'Long passing',
-    'Long shots',
-    'Marking',
-    'Penalties',
-    'Positioning',
-    'Reactions',
-    'Short passing',
-    'Shot power',
-    'Sliding tackle',
-    'Sprint speed',
-    'Stamina',
-    'Standing tackle',
-    'Strength',
-    'Vision',
-    'Volleys'
-  ];
+  const playerData = JSON.parse(fs.readFileSync('./data/scrapedPlayers3.json'));
 
-  const players = playersData.map(res => {
-    let obj = {};
-    resultKeys.forEach(key => {
-      if (res[key]) {
-        obj[key] = res[key];
-      }
-    });
-    return obj;
-  });
+  const goalies = playerData.filter(player =>
+    player.Preferred_Positions.includes('GK')
+  );
 
-  players.forEach(player => {
-    const countryObj = { name: player.Nationality };
+  // const keys = Object.keys(playerData[0]).map(key => key.replace(/ /g, '_'));
 
-    database('players')
-      .insert(JSON.stringify(player), 'id')
-      .then(player => {
-        response.status(201).json({ id: player[0] });
-      })
-      .catch(error => {
-        response.status(500).json({ error });
-      });
+  // let newList = [];
 
-    database('countries')
-      .insert(countryObj, 'id')
-      .then(country => {
-        response.status(201).json({ id: country[0] });
-      })
-      .catch(error => {
-        response.status(500).json({ error });
-      });
-  });
+  // for (let player in participatingPlayers) {
+  //   var newPlayers = {};
+
+  //   for (let key in keys) {
+  //     newPlayers[keys[key]] =
+  //       participatingPlayers[player][
+  //         Object.keys(participatingPlayers[player])[key]
+  //       ];
+  //   }
+  //   newList.push(newPlayers);
+  // }
+
+  fs.writeFileSync('./data/goalies.json', JSON.stringify(goalies, null, 4));
+
+  // let actualKeys = [
+  //   'Name',
+  //   'Age',
+  //   'Nationality',
+  //   'Club',
+  //   'Overall',
+  //   'Potential',
+  //   'Value',
+  //   'Wage',
+  //   'Acceleration',
+  //   'Aggression',
+  //   'Agility',
+  //   'Balance',
+  //   'Composure',
+  //   'Crossing',
+  //   'Curve',
+  //   'Dribbling',
+  //   'Finishing',
+  //   'Interceptions',
+  //   'Jumping',
+  //   'Marking',
+  //   'Penalties',
+  //   'Positioning',
+  //   'Reactions',
+  //   'Stamina',
+  //   'Strength',
+  //   'Vision',
+  //   'Volleys',
+  //   'Preferred_Positions'
+  // ];
+
+  // const players = newList.map(res => {
+  //   let obj = {};
+  //   actualKeys.forEach(key => {
+  //     if (res[key]) {
+  //       obj[key] = res[key];
+  //     }
+  //   });
+  //   obj['Positions'] = obj.Preferred_Positions;
+  //   delete obj.Preferred_Positions;
+  //   return obj;
+  // });
+
+  // fs.writeFileSync(
+  //   './data/goalies.json',
+  //   JSON.stringify(players, null, 4),
+  //   function(err) {}
+  // );
 });
 
 app.get('/api/v1/countries', (request, response) => {
