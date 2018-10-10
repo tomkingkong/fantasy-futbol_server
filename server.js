@@ -143,6 +143,18 @@ app.put('/api/v1/users/:id', (req, res) => {
 	})
 })
 
+app.delete('/api/v1/users/:id', (req, res) => {
+	database('users')
+		.where('id', req.params.id)
+		.del()
+		.then(() => res.sendStatus(202))
+	.catch(error => {
+		res.status(500).json({
+			error
+		})
+	})
+})
+
 app.listen(port, () => {
 	console.log('server is listening on 3000');
 });
