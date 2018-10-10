@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('name').notNullable();
       table.string('group');
+      table.string('flag');
       table.timestamp('created_at').defaultTo(knex.fn.now());
     }),
     knex.schema.createTable('players', function(table) {
@@ -12,8 +13,9 @@ exports.up = function(knex, Promise) {
       table.foreign('country_id').references('countries.id');
       table.string('Name');
       table.string('Age');
+      table.string('Photo');
       table.string('Nationality');
-      table.string('Preferred_Positions');
+      table.string('Positions');
       table.string('Club');
       table.string('Overall');
       table.string('Potential');
