@@ -89,56 +89,24 @@ app.get('/', (request, response) => {
     'Preferred_Positions'
   ];
 
-  fs.writeFileSync('./data/goalies.json', JSON.stringify(goalies, null, 4));
+  const players = newList.map(res => {
+    let obj = {};
+    actualKeys.forEach(key => {
+      if (res[key]) {
+        obj[key] = res[key];
+      }
+    });
+    obj['Positions'] = obj.Preferred_Positions;
+    delete obj.Preferred_Positions;
+    return obj;
+  });
+  console.log(players);
 
-  // let actualKeys = [
-  //   'Name',
-  //   'Age',
-  //   'Nationality',
-  //   'Club',
-  //   'Overall',
-  //   'Potential',
-  //   'Value',
-  //   'Wage',
-  //   'Acceleration',
-  //   'Aggression',
-  //   'Agility',
-  //   'Balance',
-  //   'Composure',
-  //   'Crossing',
-  //   'Curve',
-  //   'Dribbling',
-  //   'Finishing',
-  //   'Interceptions',
-  //   'Jumping',
-  //   'Marking',
-  //   'Penalties',
-  //   'Positioning',
-  //   'Reactions',
-  //   'Stamina',
-  //   'Strength',
-  //   'Vision',
-  //   'Volleys',
-  //   'Preferred_Positions'
-  // ];
-
-  // const players = newList.map(res => {
-  //   let obj = {};
-  //   actualKeys.forEach(key => {
-  //     if (res[key]) {
-  //       obj[key] = res[key];
-  //     }
-  //   });
-  //   obj['Positions'] = obj.Preferred_Positions;
-  //   delete obj.Preferred_Positions;
-  //   return obj;
-  // });
-
-  // fs.writeFileSync(
-  //   './data/goalies.json',
-  //   JSON.stringify(players, null, 4),
-  //   function(err) {}
-  // );
+  fs.writeFileSync(
+    './data/scrapedPlayers.json',
+    JSON.stringify(players, null, 4),
+    function(err) {}
+  );
 });
 
 app.get('/api/v1/countries', (request, response) => {
