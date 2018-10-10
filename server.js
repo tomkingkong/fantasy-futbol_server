@@ -159,6 +159,20 @@ app.delete('/api/v1/users/:id', (req, res) => {
 	})
 })
 
+app.delete('/api/v1/players/:id', (req, res) => {
+	database('players')
+		.where('id', req.params.id)
+		.del()
+		.then(() => res.status(202).json({
+			"msg": "player successfully deleted"
+		}))
+	.catch(error => {
+		res.status(500).json({
+			error
+		})
+	})
+})
+
 app.listen(port, () => {
 	console.log('server is listening on 3000');
 });
