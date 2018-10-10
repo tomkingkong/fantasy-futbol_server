@@ -147,7 +147,9 @@ app.delete('/api/v1/users/:id', (req, res) => {
 	database('users')
 		.where('id', req.params.id)
 		.del()
-		.then(() => res.sendStatus(202))
+		.then(() => res.status(202).json({
+			"msg": "user successfully deleted"
+		}))
 	.catch(error => {
 		res.status(500).json({
 			error
