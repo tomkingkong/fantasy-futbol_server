@@ -28,12 +28,19 @@ app.get('/', (request, response) => {
     key.replace(/ /g, '_')
   );
 
-  // const keys = Object.keys(playerData[0]).map(key => key.replace(/ /g, '_'));
+  let newList = [];
 
-  // let newList = [];
+  for (let player in participatingPlayers) {
+    var newPlayers = {};
 
-  // for (let player in participatingPlayers) {
-  //   var newPlayers = {};
+    for (let key in keys) {
+      newPlayers[keys[key]] =
+        participatingPlayers[player][
+          Object.keys(participatingPlayers[player])[key]
+        ];
+    }
+    newList.push(newPlayers);
+  }
 
   //   for (let key in keys) {
   //     newPlayers[keys[key]] =
