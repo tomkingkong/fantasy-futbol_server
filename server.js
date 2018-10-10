@@ -19,7 +19,7 @@ app.get('/api/v1/countries', (request, response) => {
 	database('countries')
 		.then(countries => response.status(200).json(countries))
 		.catch(error => {
-			response.status(500).json({
+			return response.status(500).json({
 				error
 			});
 		});
@@ -192,3 +192,5 @@ app.delete('/api/v1/players/:id', (req, res) => {
 app.listen(port, () => {
 	console.log('server is listening on 3000');
 });
+
+module.exports = {app, database};
