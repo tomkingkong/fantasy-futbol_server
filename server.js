@@ -130,6 +130,34 @@ app.get('/api/v1/users', (request, response) => {
 		});
 });
 
+app.get('/api/v1/users/:id', (request, response) => {
+	const userID = request.params.id
+	database('users')
+		.where('id', userID)
+		.then((user) => response.status(200).json(user))
+		.catch(error => {
+			response.status(500).json({
+				error
+			});
+		});
+});
+
+app.post('/api/v1/users', (request, response) => {
+	const {username, password} = request.body
+	const user = {username, password}
+	database('users').insert(user, 'id')
+		.then(user => {
+			response.status(201).json({
+				id: user[0]
+			})
+		})
+		.catch(error => {
+			res.status(500).json({
+				error
+			})
+		})
+})
+
 app.get('/api/v1/players/:id', (request, response) => {
 	const {
 		id
