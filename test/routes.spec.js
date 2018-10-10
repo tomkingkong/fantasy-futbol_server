@@ -23,12 +23,21 @@ describe('API Routes', () => {
 
 	describe('Client Routes', () => {
 		it('should return the homepage with text', done => {
-			chai.request(server)
+			chai.request(app)
 				.get('/api/v1/countries')
 				.end((err, res) => {
 					res.should.have.status(200);
-					res.should.be.html;
-					res.res.text.should.equal(homepageHTML);
+					res.body.should.be.a('array')
+					res.body.length.should.equal(2);
+					res.body[0].should.have.property('id');
+					res.body[0].id.should.equal(1);
+					res.body[0].should.have.property('name');
+					res.body[0].name.should.equal('Argentina');
+					res.body[0].should.have.property('group');
+					res.body[0].group.should.equal('D');
+					res.body[0].should.have.property('flag');
+					res.body[0].flag.should.equal('https://cdn.sofifa.org/flags/52.png');
+
 					done();
 				});
 		});
