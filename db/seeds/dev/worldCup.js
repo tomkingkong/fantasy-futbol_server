@@ -1,5 +1,5 @@
-const playersData = require('../../../data/scrapedPlayers.js');
-const countries = require('../../../data/countries.js');
+const playersData = require('../../../data/scrapedPlayers.json');
+const countries = require('../../../data/countries.json');
 
 const createPlayer = (knex, player, countryIds) => {
   const matchingCountry = countries.find(
