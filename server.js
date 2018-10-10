@@ -135,7 +135,9 @@ app.put('/api/v1/users/:id', (req, res) => {
 			database('users')
 				.where('id', req.params.id)
 				.update(req.body)
-				.then(() => res.sendStatus(201))
+				.then(() => res.status(202).json({
+			"msg": "user successfully modified"
+				}))
 	.catch(error => {
 		res.status(500).json({
 			error
