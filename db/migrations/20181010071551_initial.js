@@ -56,6 +56,34 @@ exports.up = function(knex, Promise) {
       table.string('Vision');
       table.string('Volleys');
       table.timestamp('created_at').defaultTo(knex.fn.now());
+    }),
+    knex.schema.createTable('users', function(table) {
+      table.increments('id').primary();
+      table.string('username');
+      table.string('password');
+      table.integer('player_id_1').unsigned();
+      table.foreign('player_id_1').references('players.id');
+      table.integer('player_id_2').unsigned();
+      table.foreign('player_id_2').references('players.id');
+      table.integer('player_id_3').unsigned();
+      table.foreign('player_id_3').references('players.id');
+      table.integer('player_id_4').unsigned();
+      table.foreign('player_id_4').references('players.id');
+      table.integer('player_id_5').unsigned();
+      table.foreign('player_id_5').references('players.id');
+      table.integer('player_id_6').unsigned();
+      table.foreign('player_id_6').references('players.id');
+      table.integer('player_id_7').unsigned();
+      table.foreign('player_id_7').references('players.id');
+      table.integer('player_id_8').unsigned();
+      table.foreign('player_id_8').references('players.id');
+      table.integer('player_id_9').unsigned();
+      table.foreign('player_id_9').references('players.id');
+      table.integer('player_id_10').unsigned();
+      table.foreign('player_id_10').references('players.id');
+      table.integer('player_id_11').unsigned();
+      table.foreign('player_id_11').references('players.id');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
     })
   ]);
 };
