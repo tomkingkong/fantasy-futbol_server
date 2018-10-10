@@ -139,10 +139,10 @@ app.get('/api/v1/countries/:id', (request, response) => {
     });
 });
 
-app.get('/api/v1/players/:id', (request, response) => {
+app.get('/api/v1/players/:id/', (request, response) => {
   const { id } = request.params;
   database('players')
-    .where('id', id)
+    .where('country_id', id)
     .then(player => {
       player.length
         ? response.status(200).json(player)
@@ -151,11 +151,6 @@ app.get('/api/v1/players/:id', (request, response) => {
     .catch(error => {
       response.status(500).json({ error });
     });
-});
-
-app.post('/api/v1/players/:id', (request, response) => {
-  const player = request.body;
-  database(user);
 });
 
 app.listen(port, () => {
