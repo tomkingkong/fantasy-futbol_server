@@ -109,6 +109,22 @@ app.get('/api/v1/country/:id/players', (request, response) => {
 		});
 });
 
+app.put('/api/v1/users/:id/:player/players/:player_id', (req, res) => {
+	const userPosition = `player_id_${req.params.player}`
+	database('players')
+		.where('id', req.params.player_id)
+		.then(player => {
+			database('users')
+				.where('id', req.params.id)
+				.update({ [userPosition]: player[0].id })
+				.then(() => res.sendStatus(201))
+		})
+	.catch(error => {
+		res.status(500).json({
+			error
+		})
+	})
+})
 app.listen(port, () => {
 	console.log('server is listening on 3000');
 });
