@@ -452,6 +452,32 @@ describe('API Routes', () => {
         });
     });
 
+    it('/api/v1/users : should retrieve all users', done => {
+      chai
+        .request(app)
+        .get('/api/v1/users')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          res.should.be.json;
+          res.body.length.should.equal(1);
+          res.body[0].username.should.equal('Paul');
+          res.body[0].password.should.equal('password');
+          res.body[0].player_id_1.should.equal(1);
+          res.body[0].player_id_2.should.equal(2);
+          res.body[0].should.have.property('username');
+          res.body[0].should.have.property('password');
+          res.body[0].should.have.property('player_id_1');
+          res.body[0].should.have.property('player_id_2');
+          res.body[0].should.have.property('player_id_3');
+          res.body[0].should.have.property('player_id_4');
+          res.body[0].should.have.property('player_id_5');
+          res.body[0].should.have.property('player_id_6');
+          res.body[0].should.have.property('player_id_7');
+          res.body[0].should.have.property('player_id_8');
+          res.body[0].should.have.property('player_id_9');
+          res.body[0].should.have.property('player_id_10');
+          res.body[0].should.have.property('player_id_11');
 					done();
 				});
 		});
