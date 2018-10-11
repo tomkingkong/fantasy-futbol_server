@@ -514,6 +514,27 @@ describe('API Routes', () => {
     });
   });
 
+  describe('POST Routes', () => {
+    let optionsObj;
+
+    describe('/api/v1/users', () => {
+      it('should post a new user if correct body is given', done => {
+        optionsObj = { username: 'Paul', password: 'cliffhangar' };
+        chai
+          .request(app)
+          .post('/api/v1/users')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(201);
+            res.should.have.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal(
+              'Username: Paul was created with id of 2'
+            );
+            done();
+          });
+      });
+
 		// });
 	});
 });
