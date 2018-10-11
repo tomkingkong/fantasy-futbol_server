@@ -576,6 +576,30 @@ describe('API Routes', () => {
           });
       });
 
+      it('should return proper error if given incorrect body', done => {
+        const optionsObj = {
+          nae: '',
+          group: 'E',
+          flag: 'https://cdn.sofifa.org/flags/52.png'
+        };
+
+        chai
+          .request(app)
+          .post('/api/v1/countries')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(500);
+            res.should.be.json;
+            res.body.should.have.property('error');
+            res.body.error.should.equal(
+              'insert into "countries" ("flag", "group", "name") values ($1, $2, $3) returning "id" - null value in column "name" violates not-null constraint'
+            );
+            done();
+          });
+      });
+    });
+  });
+
 		// });
 	});
 });
