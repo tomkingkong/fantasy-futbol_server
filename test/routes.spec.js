@@ -628,4 +628,23 @@ describe('API Routes', () => {
       //     });
 		// });
 	});
+    describe('/api/v1/users/:id', () => {
+      let optionsObj;
+      it('should update user information if correct body is given', done => {
+        optionsObj = { username: 'Link', password: 'itIsOinktober' };
+        chai
+          .request(app)
+          .put('/api/v1/users/1')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(202);
+            res.should.be.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal(
+              'edited user {username: Link, password: itIsOinktober}'
+            );
+            done();
+          });
+      });
+
 });
