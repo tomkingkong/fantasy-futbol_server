@@ -1,0 +1,97 @@
+exports.up = function(knex, Promise) {
+  return Promise.all([
+    knex.schema.createTable('countries', function(table) {
+      table.increments('id').primary();
+      table.string('name').notNullable();
+      table.string('flag');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+    }),
+    knex.schema.createTable('players', function(table) {
+      table.increments('id').primary();
+      table.integer('country_id').unsigned();
+      table.foreign('country_id').references('countries.id');
+      table.string('Name');
+      table.string('Age');
+      table.string('Photo');
+      table.string('Club_Logo');
+      table.string('Nationality');
+      table.string('Positions');
+      table.string('Club');
+      table.string('Overall');
+      table.string('Potential');
+      table.string('Value');
+      table.string('Wage');
+      table.string('Acceleration');
+      table.string('Aggression');
+      table.string('Agility');
+      table.string('Balance');
+      table.string('Ball_control');
+      table.string('Composure');
+      table.string('Crossing');
+      table.string('Curve');
+      table.string('Dribbling');
+      table.string('Finishing');
+      table.string('Free_kick_accuracy');
+      table.string('GK_diving');
+      table.string('GK_handling');
+      table.string('GK_kicking');
+      table.string('GK_positioning');
+      table.string('GK_reflexes');
+      table.string('Heading_accuracy');
+      table.string('Interceptions');
+      table.string('Jumping');
+      table.string('Long_passing');
+      table.string('Long_shots');
+      table.string('Marking');
+      table.string('Penalties');
+      table.string('Positioning');
+      table.string('Reactions');
+      table.string('Short_passing');
+      table.string('Shot_power');
+      table.string('Sliding_tackle');
+      table.string('Sprint_speed');
+      table.string('Stamina');
+      table.string('Standing_tackle');
+      table.string('Strength');
+      table.string('Vision');
+      table.string('Volleys');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+    }),
+    knex.schema.createTable('users', function(table) {
+      table.increments('id').primary();
+      table.string('username');
+      table.string('password');
+      table.integer('player_id_1').unsigned();
+      table.foreign('player_id_1').references('players.id');
+      table.integer('player_id_2').unsigned();
+      table.foreign('player_id_2').references('players.id');
+      table.integer('player_id_3').unsigned();
+      table.foreign('player_id_3').references('players.id');
+      table.integer('player_id_4').unsigned();
+      table.foreign('player_id_4').references('players.id');
+      table.integer('player_id_5').unsigned();
+      table.foreign('player_id_5').references('players.id');
+      table.integer('player_id_6').unsigned();
+      table.foreign('player_id_6').references('players.id');
+      table.integer('player_id_7').unsigned();
+      table.foreign('player_id_7').references('players.id');
+      table.integer('player_id_8').unsigned();
+      table.foreign('player_id_8').references('players.id');
+      table.integer('player_id_9').unsigned();
+      table.foreign('player_id_9').references('players.id');
+      table.integer('player_id_10').unsigned();
+      table.foreign('player_id_10').references('players.id');
+      table.integer('player_id_11').unsigned();
+      table.foreign('player_id_11').references('players.id');
+      table.timestamp('created_at').defaultTo(knex.fn.now());
+    })
+  ]);
+};
+
+exports.down = function(knex, Promise) {
+  return Promise.all([
+    knex.schema.dropTable('users'),
+    knex.schema.dropTable('players'),
+    knex.schema.dropTable('countries')
+  ]);
+};
