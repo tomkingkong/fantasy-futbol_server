@@ -600,6 +600,32 @@ describe('API Routes', () => {
     });
   });
 
+  describe('PUT', () => {
+    describe('/api/v1/users/:id/:player/players/:player_id', () => {
+      it('should update a users player list if correct parameters are given', done => {
+        chai
+          .request(app)
+          .put('/api/v1/users/1/3/players/2')
+          .end((err, res) => {
+            res.should.have.status(201);
+            res.should.be.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal('player_id_3 was edited');
+            done();
+          });
+      });
+
+      // it('should return proper error if incorrect parameters are given', done => {
+      //   chai
+      //     .request(app)
+      //     .put('/api/v1/users/1/23/players/2')
+      //     .end((err, res) => {
+      //       res.should.have.status(422);
+      //       res.should.be.json;
+      //       res.body.should.have.property('msg');
+      //       res.body.msg.should.equal('Users player_id_23 does not exist');
+      //       done();
+      //     });
 		// });
 	});
 });
