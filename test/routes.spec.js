@@ -535,6 +535,23 @@ describe('API Routes', () => {
           });
       });
 
+      it('should return proper error if incorrect body is given', done => {
+        optionsObj = { usernme: 'Paul', passwrd: 'cliffhangar' };
+
+        chai
+          .request(app)
+          .post('/api/v1/users')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(422);
+            res.should.have.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal('Missing one or more fields');
+            done();
+          });
+      });
+    });
+
 		// });
 	});
 });
