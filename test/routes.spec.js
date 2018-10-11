@@ -482,13 +482,38 @@ describe('API Routes', () => {
 				});
 		});
 
-		// it('should return a 404 for a route that does not exist', done => {
-		// 	chai.request(server)
-		// 		.get('/sad')
-		// 		.end((err, res) => {
-		// 			res.should.have.status(404);
-		// 			done();
-		// 		});
+    it('/api/v1/users/:id : should retrieve a specific user with given id', done => {
+      chai
+        .request(app)
+        .get('/api/v1/users/1')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.should.be.a('array');
+          res.body.length.should.equal(1);
+          res.body[0].should.have.property('id');
+          res.body[0].should.have.property('username');
+          res.body[0].should.have.property('password');
+          res.body[0].should.have.property('player_id_1');
+          res.body[0].should.have.property('player_id_2');
+          res.body[0].should.have.property('player_id_3');
+          res.body[0].should.have.property('player_id_4');
+          res.body[0].should.have.property('player_id_5');
+          res.body[0].should.have.property('player_id_6');
+          res.body[0].should.have.property('player_id_7');
+          res.body[0].should.have.property('player_id_8');
+          res.body[0].should.have.property('player_id_9');
+          res.body[0].should.have.property('player_id_10');
+          res.body[0].should.have.property('player_id_11');
+          res.body[0].username.should.equal('Paul');
+          res.body[0].password.should.equal('password');
+          res.body[0].player_id_1.should.equal(1);
+          res.body[0].player_id_2.should.equal(2);
+          done();
+        });
+    });
+  });
+
 		// });
 	});
 });
