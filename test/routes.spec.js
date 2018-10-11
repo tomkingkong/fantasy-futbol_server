@@ -647,4 +647,19 @@ describe('API Routes', () => {
           });
       });
 
+      it('should return proper error if incorrect body is given', done => {
+        optionsObj = { userna: 'link', passwo: 'dsd' };
+        chai
+          .request(app)
+          .put('/api/v1/users/1')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(422);
+            res.should.be.json;
+            res.body.should.have.property('error');
+            res.body.error.should.equal('Incorrect fields');
+            done();
+          });
+      });
+    });
 });
