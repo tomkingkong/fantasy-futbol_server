@@ -679,3 +679,16 @@ describe('API Routes', () => {
           });
       });
 
+      it('should return proper error if given incorrect parameters', done => {
+        chai
+          .request(app)
+          .delete('/api/v1/users/230')
+          .end((err, res) => {
+            res.should.have.status(422);
+            res.should.be.json;
+            res.body.should.have.property('error');
+            res.body.error.should.equal('user does not exist');
+            done();
+          });
+      });
+    });
