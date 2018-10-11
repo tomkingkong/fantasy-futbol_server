@@ -692,3 +692,28 @@ describe('API Routes', () => {
           });
       });
     });
+
+    describe('/api/v1/players/:id', () => {
+      it('should delete a player if give correct parameters', done => {
+        chai
+          .request(app)
+          .delete('/api/v1/players/2')
+          .end((err, res) => {
+            res.should.have.status(200);
+            done();
+          });
+      });
+    });
+  });
+});
+
+// it('should return a 404 for a route that does not exist' done => {
+//   chai
+//     .request(server)
+//     .get('/sad')
+//     .end((err,res) => {
+//       res.should.have.status(404);
+//       done();
+//     });
+// });
+// });
