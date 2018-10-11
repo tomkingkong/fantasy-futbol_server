@@ -8,41 +8,37 @@ const { app, database } = require('../server');
 chai.use(chaiHttp);
 
 describe('API Routes', () => {
-	beforeEach(done => {
+  beforeEach(done => {
     database.migrate.rollback().then(() => {
       database.migrate.latest().then(() => {
         return database.seed.run().then(() => {
-								done();
-					});
-			});
-	});
+          done();
+        });
+      });
+    });
   });
 
   describe('GET Routes', () => {
     it('/api/v1/countries : should retrieve all the countries', done => {
       chai
         .request(app)
-				.get('/api/v1/countries')
-				.end((err, res) => {
-					res.should.have.status(200);
+        .get('/api/v1/countries')
+        .end((err, res) => {
+          res.should.have.status(200);
           res.body.should.be.a('array');
-					res.body.length.should.equal(2);
+          res.body.length.should.equal(2);
           res.should.have.json;
-					res.body[0].should.have.property('id');
+          res.body[0].should.have.property('id');
           res.body[1].should.have.property('id');
-					res.body[0].id.should.equal(1);
+          res.body[0].id.should.equal(1);
           res.body[1].id.should.equal(2);
-					res.body[0].should.have.property('name');
+          res.body[0].should.have.property('name');
           res.body[1].should.have.property('name');
-					res.body[0].name.should.equal('Argentina');
+          res.body[0].name.should.equal('Argentina');
           res.body[1].name.should.equal('Spain');
-					res.body[0].should.have.property('group');
-          res.body[1].should.have.property('group');
-					res.body[0].group.should.equal('D');
-          res.body[1].group.should.equal('B');
-					res.body[0].should.have.property('flag');
+          res.body[0].should.have.property('flag');
           res.body[1].should.have.property('flag');
-					res.body[0].flag.should.equal('https://cdn.sofifa.org/flags/52.png');
+          res.body[0].flag.should.equal('https://cdn.sofifa.org/flags/52.png');
           res.body[1].flag.should.equal('https://cdn.sofifa.org/flags/45.png');
           done();
         });
@@ -478,9 +474,10 @@ describe('API Routes', () => {
           res.body[0].should.have.property('player_id_9');
           res.body[0].should.have.property('player_id_10');
           res.body[0].should.have.property('player_id_11');
-					done();
-				});
-		});
+          done();
+        });
+    });
+
 
     it('/api/v1/users/:id : should retrieve a specific user with given id', done => {
       chai
@@ -555,12 +552,10 @@ describe('API Routes', () => {
     describe('/api/v1/countries', () => {
       let optionsObj;
       it('should add a new country if correct body is given', done => {
-        optionsObj = {
+        let optionsObj = {
           name: 'Italy',
-          group: 'E',
           flag: 'https://cdn.sofifa.org/flags/52.png'
         };
-
         chai
           .request(app)
           .post('/api/v1/countries')
@@ -579,7 +574,6 @@ describe('API Routes', () => {
       it('should return proper error if given incorrect body', done => {
         const optionsObj = {
           nae: '',
-          group: 'E',
           flag: 'https://cdn.sofifa.org/flags/52.png'
         };
 
@@ -592,7 +586,7 @@ describe('API Routes', () => {
             res.should.be.json;
             res.body.should.have.property('error');
             res.body.error.should.equal(
-              'insert into "countries" ("flag", "group", "name") values ($1, $2, $3) returning "id" - null value in column "name" violates not-null constraint'
+              'insert into "countries" ("name") values ($1) returning "id" - null value in column "name" violates not-null constraint'
             );
             done();
           });
@@ -626,8 +620,9 @@ describe('API Routes', () => {
       //       res.body.msg.should.equal('Users player_id_23 does not exist');
       //       done();
       //     });
-		// });
-	});
+      // });
+    });
+
     describe('/api/v1/users/:id', () => {
       let optionsObj;
       it('should update user information if correct body is given', done => {

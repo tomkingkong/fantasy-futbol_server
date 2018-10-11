@@ -1,11 +1,10 @@
-[{
-		"name": "Argentina",
-		"group": "D",
-		"flag": "https://cdn.sofifa.org/flags/52.png"
-	},
-	{
-		"name": "Spain",
-		"group": "B",
-		"flag": "https://cdn.sofifa.org/flags/45.png"
-	}
+[
+  {
+    "name": "Argentina",
+    "flag": "https://cdn.sofifa.org/flags/52.png"
+  },
+  {
+    "name": "Spain",
+    "flag": "https://cdn.sofifa.org/flags/45.png"
+  }
 ]

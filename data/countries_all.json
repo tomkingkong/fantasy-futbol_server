@@ -1,0 +1,650 @@
+[
+    {
+        "name": "Argentina",
+        "flag": "https://cdn.sofifa.org/flags/52.png"
+    },
+    {
+        "name": "Portugal",
+        "flag": "https://cdn.sofifa.org/flags/38.png"
+    },
+    {
+        "name": "Brazil",
+        "flag": "https://cdn.sofifa.org/flags/54.png"
+    },
+    {
+        "name": "Uruguay",
+        "flag": "https://cdn.sofifa.org/flags/60.png"
+    },
+    {
+        "name": "Germany",
+        "flag": "https://cdn.sofifa.org/flags/21.png"
+    },
+    {
+        "name": "Spain",
+        "flag": "https://cdn.sofifa.org/flags/45.png"
+    },
+    {
+        "name": "Belgium",
+        "flag": "https://cdn.sofifa.org/flags/7.png"
+    },
+    {
+        "name": "Poland",
+        "flag": "https://cdn.sofifa.org/flags/37.png"
+    },
+    {
+        "name": "Slovenia",
+        "flag": "https://cdn.sofifa.org/flags/44.png"
+    },
+    {
+        "name": "Croatia",
+        "flag": "https://cdn.sofifa.org/flags/10.png"
+    },
+    {
+        "name": "Italy",
+        "flag": "https://cdn.sofifa.org/flags/27.png"
+    },
+    {
+        "name": "France",
+        "flag": "https://cdn.sofifa.org/flags/18.png"
+    },
+    {
+        "name": "England",
+        "flag": "https://cdn.sofifa.org/flags/14.png"
+    },
+    {
+        "name": "Denmark",
+        "flag": "https://cdn.sofifa.org/flags/13.png"
+    },
+    {
+        "name": "Chile",
+        "flag": "https://cdn.sofifa.org/flags/55.png"
+    },
+    {
+        "name": "Wales",
+        "flag": "https://cdn.sofifa.org/flags/50.png"
+    },
+    {
+        "name": "Egypt",
+        "flag": "https://cdn.sofifa.org/flags/111.png"
+    },
+    {
+        "name": "Colombia",
+        "flag": "https://cdn.sofifa.org/flags/56.png"
+    },
+    {
+        "name": "Gabon",
+        "flag": "https://cdn.sofifa.org/flags/115.png"
+    },
+    {
+        "name": "Slovakia",
+        "flag": "https://cdn.sofifa.org/flags/43.png"
+    },
+    {
+        "name": "Netherlands",
+        "flag": "https://cdn.sofifa.org/flags/34.png"
+    },
+    {
+        "name": "Bosnia Herzegovina",
+        "flag": "https://cdn.sofifa.org/flags/8.png"
+    },
+    {
+        "name": "Senegal",
+        "flag": "https://cdn.sofifa.org/flags/136.png"
+    },
+    {
+        "name": "Austria",
+        "flag": "https://cdn.sofifa.org/flags/4.png"
+    },
+    {
+        "name": "Costa Rica",
+        "flag": "https://cdn.sofifa.org/flags/72.png"
+    },
+    {
+        "name": "Greece",
+        "flag": "https://cdn.sofifa.org/flags/22.png"
+    },
+    {
+        "name": "Serbia",
+        "flag": "https://cdn.sofifa.org/flags/51.png"
+    },
+    {
+        "name": "Morocco",
+        "flag": "https://cdn.sofifa.org/flags/129.png"
+    },
+    {
+        "name": "Sweden",
+        "flag": "https://cdn.sofifa.org/flags/46.png"
+    },
+    {
+        "name": "Ivory Coast",
+        "flag": "https://cdn.sofifa.org/flags/108.png"
+    },
+    {
+        "name": "Algeria",
+        "flag": "https://cdn.sofifa.org/flags/97.png"
+    },
+    {
+        "name": "Korea Republic",
+        "flag": "https://cdn.sofifa.org/flags/167.png"
+    },
+    {
+        "name": "Armenia",
+        "flag": "https://cdn.sofifa.org/flags/3.png"
+    },
+    {
+        "name": "Czech Republic",
+        "flag": "https://cdn.sofifa.org/flags/12.png"
+    },
+    {
+        "name": "Guinea",
+        "flag": "https://cdn.sofifa.org/flags/118.png"
+    },
+    {
+        "name": "Finland",
+        "flag": "https://cdn.sofifa.org/flags/17.png"
+    },
+    {
+        "name": "Japan",
+        "flag": "https://cdn.sofifa.org/flags/163.png"
+    },
+    {
+        "name": "Ecuador",
+        "flag": "https://cdn.sofifa.org/flags/57.png"
+    },
+    {
+        "name": "Norway",
+        "flag": "https://cdn.sofifa.org/flags/36.png"
+    },
+    {
+        "name": "Jamaica",
+        "flag": "https://cdn.sofifa.org/flags/82.png"
+    },
+    {
+        "name": "Montenegro",
+        "flag": "https://cdn.sofifa.org/flags/15.png"
+    },
+    {
+        "name": "Switzerland",
+        "flag": "https://cdn.sofifa.org/flags/47.png"
+    },
+    {
+        "name": "Cameroon",
+        "flag": "https://cdn.sofifa.org/flags/103.png"
+    },
+    {
+        "name": "Turkey",
+        "flag": "https://cdn.sofifa.org/flags/48.png"
+    },
+    {
+        "name": "Ukraine",
+        "flag": "https://cdn.sofifa.org/flags/49.png"
+    },
+    {
+        "name": "Russia",
+        "flag": "https://cdn.sofifa.org/flags/40.png"
+    },
+    {
+        "name": "Mexico",
+        "flag": "https://cdn.sofifa.org/flags/83.png"
+    },
+    {
+        "name": "Kenya",
+        "flag": "https://cdn.sofifa.org/flags/120.png"
+    },
+    {
+        "name": "Iceland",
+        "flag": "https://cdn.sofifa.org/flags/24.png"
+    },
+    {
+        "name": "Republic of Ireland",
+        "flag": "https://cdn.sofifa.org/flags/25.png"
+    },
+    {
+        "name": "Ghana",
+        "flag": "https://cdn.sofifa.org/flags/117.png"
+    },
+    {
+        "name": "Paraguay",
+        "flag": "https://cdn.sofifa.org/flags/58.png"
+    },
+    {
+        "name": "Nigeria",
+        "flag": "https://cdn.sofifa.org/flags/133.png"
+    },
+    {
+        "name": "Dominican Republic",
+        "flag": "https://cdn.sofifa.org/flags/207.png"
+    },
+    {
+        "name": "Albania",
+        "flag": "https://cdn.sofifa.org/flags/1.png"
+    },
+    {
+        "name": "United States",
+        "flag": "https://cdn.sofifa.org/flags/95.png"
+    },
+    {
+        "name": "Romania",
+        "flag": "https://cdn.sofifa.org/flags/39.png"
+    },
+    {
+        "name": "Canada",
+        "flag": "https://cdn.sofifa.org/flags/70.png"
+    },
+    {
+        "name": "Mali",
+        "flag": "https://cdn.sofifa.org/flags/126.png"
+    },
+    {
+        "name": "Scotland",
+        "flag": "https://cdn.sofifa.org/flags/42.png"
+    },
+    {
+        "name": "Burkina Faso",
+        "flag": "https://cdn.sofifa.org/flags/101.png"
+    },
+    {
+        "name": "Venezuela",
+        "flag": "https://cdn.sofifa.org/flags/61.png"
+    },
+    {
+        "name": "Cape Verde",
+        "flag": "https://cdn.sofifa.org/flags/104.png"
+    },
+    {
+        "name": "Hungary",
+        "flag": "https://cdn.sofifa.org/flags/23.png"
+    },
+    {
+        "name": "Northern Ireland",
+        "flag": "https://cdn.sofifa.org/flags/35.png"
+    },
+    {
+        "name": "Uzbekistan",
+        "flag": "https://cdn.sofifa.org/flags/191.png"
+    },
+    {
+        "name": "Peru",
+        "flag": "https://cdn.sofifa.org/flags/59.png"
+    },
+    {
+        "name": "Syria",
+        "flag": "https://cdn.sofifa.org/flags/186.png"
+    },
+    {
+        "name": "Angola",
+        "flag": "https://cdn.sofifa.org/flags/98.png"
+    },
+    {
+        "name": "Iran",
+        "flag": "https://cdn.sofifa.org/flags/161.png"
+    },
+    {
+        "name": "Australia",
+        "flag": "https://cdn.sofifa.org/flags/195.png"
+    },
+    {
+        "name": "Israel",
+        "flag": "https://cdn.sofifa.org/flags/26.png"
+    },
+    {
+        "name": "Zimbabwe",
+        "flag": "https://cdn.sofifa.org/flags/148.png"
+    },
+    {
+        "name": "Benin",
+        "flag": "https://cdn.sofifa.org/flags/99.png"
+    },
+    {
+        "name": "New Zealand",
+        "flag": "https://cdn.sofifa.org/flags/198.png"
+    },
+    {
+        "name": "South Africa",
+        "flag": "https://cdn.sofifa.org/flags/140.png"
+    },
+    {
+        "name": "Mozambique",
+        "flag": "https://cdn.sofifa.org/flags/130.png"
+    },
+    {
+        "name": "DR Congo",
+        "flag": "https://cdn.sofifa.org/flags/110.png"
+    },
+    {
+        "name": "Togo",
+        "flag": "https://cdn.sofifa.org/flags/144.png"
+    },
+    {
+        "name": "Bulgaria",
+        "flag": "https://cdn.sofifa.org/flags/9.png"
+    },
+    {
+        "name": "Kosovo",
+        "flag": "https://cdn.sofifa.org/flags/219.png"
+    },
+    {
+        "name": "Belarus",
+        "flag": "https://cdn.sofifa.org/flags/6.png"
+    },
+    {
+        "name": "Saudi Arabia",
+        "flag": "https://cdn.sofifa.org/flags/183.png"
+    },
+    {
+        "name": "Georgia",
+        "flag": "https://cdn.sofifa.org/flags/20.png"
+    },
+    {
+        "name": "FYR Macedonia",
+        "flag": "https://cdn.sofifa.org/flags/19.png"
+    },
+    {
+        "name": "Lithuania",
+        "flag": "https://cdn.sofifa.org/flags/30.png"
+    },
+    {
+        "name": "Cuba",
+        "flag": "https://cdn.sofifa.org/flags/73.png"
+    },
+    {
+        "name": "Moldova",
+        "flag": "https://cdn.sofifa.org/flags/33.png"
+    },
+    {
+        "name": "Tunisia",
+        "flag": "https://cdn.sofifa.org/flags/145.png"
+    },
+    {
+        "name": "Bolivia",
+        "flag": "https://cdn.sofifa.org/flags/53.png"
+    },
+    {
+        "name": "Honduras",
+        "flag": "https://cdn.sofifa.org/flags/81.png"
+    },
+    {
+        "name": "Congo",
+        "flag": "https://cdn.sofifa.org/flags/107.png"
+    },
+    {
+        "name": "Trinidad & Tobago",
+        "flag": "https://cdn.sofifa.org/flags/93.png"
+    },
+    {
+        "name": "Curacao",
+        "flag": "https://cdn.sofifa.org/flags/85.png"
+    },
+    {
+        "name": "Sierra Leone",
+        "flag": "https://cdn.sofifa.org/flags/138.png"
+    },
+    {
+        "name": "Guinea Bissau",
+        "flag": "https://cdn.sofifa.org/flags/119.png"
+    },
+    {
+        "name": "Gambia",
+        "flag": "https://cdn.sofifa.org/flags/116.png"
+    },
+    {
+        "name": "China PR",
+        "flag": "https://cdn.sofifa.org/flags/155.png"
+    },
+    {
+        "name": "Cyprus",
+        "flag": "https://cdn.sofifa.org/flags/11.png"
+    },
+    {
+        "name": "Chad",
+        "flag": "https://cdn.sofifa.org/flags/106.png"
+    },
+    {
+        "name": "Oman",
+        "flag": "https://cdn.sofifa.org/flags/178.png"
+    },
+    {
+        "name": "Haiti",
+        "flag": "https://cdn.sofifa.org/flags/80.png"
+    },
+    {
+        "name": "Tanzania",
+        "flag": "https://cdn.sofifa.org/flags/143.png"
+    },
+    {
+        "name": "Iraq",
+        "flag": "https://cdn.sofifa.org/flags/162.png"
+    },
+    {
+        "name": "Libya",
+        "flag": "https://cdn.sofifa.org/flags/123.png"
+    },
+    {
+        "name": "Madagascar",
+        "flag": "https://cdn.sofifa.org/flags/124.png"
+    },
+    {
+        "name": "Fiji",
+        "flag": "https://cdn.sofifa.org/flags/197.png"
+    },
+    {
+        "name": "New Caledonia",
+        "flag": "https://cdn.sofifa.org/flags/215.png"
+    },
+    {
+        "name": "Korea DPR",
+        "flag": "https://cdn.sofifa.org/flags/166.png"
+    },
+    {
+        "name": "Liechtenstein",
+        "flag": "https://cdn.sofifa.org/flags/29.png"
+    },
+    {
+        "name": "Panama",
+        "flag": "https://cdn.sofifa.org/flags/87.png"
+    },
+    {
+        "name": "Suriname",
+        "flag": "https://cdn.sofifa.org/flags/92.png"
+    },
+    {
+        "name": "Estonia",
+        "flag": "https://cdn.sofifa.org/flags/208.png"
+    },
+    {
+        "name": "Zambia",
+        "flag": "https://cdn.sofifa.org/flags/147.png"
+    },
+    {
+        "name": "Eritrea",
+        "flag": "https://cdn.sofifa.org/flags/113.png"
+    },
+    {
+        "name": "Luxembourg",
+        "flag": "https://cdn.sofifa.org/flags/31.png"
+    },
+    {
+        "name": "Philippines",
+        "flag": "https://cdn.sofifa.org/flags/181.png"
+    },
+    {
+        "name": "Bermuda",
+        "flag": "https://cdn.sofifa.org/flags/68.png"
+    },
+    {
+        "name": "Kuwait",
+        "flag": "https://cdn.sofifa.org/flags/168.png"
+    },
+    {
+        "name": "St Kitts Nevis",
+        "flag": "https://cdn.sofifa.org/flags/89.png"
+    },
+    {
+        "name": "Uganda",
+        "flag": "https://cdn.sofifa.org/flags/146.png"
+    },
+    {
+        "name": "Mauritania",
+        "flag": "https://cdn.sofifa.org/flags/127.png"
+    },
+    {
+        "name": "Latvia",
+        "flag": "https://cdn.sofifa.org/flags/28.png"
+    },
+    {
+        "name": "Central African Rep.",
+        "flag": "https://cdn.sofifa.org/flags/105.png"
+    },
+    {
+        "name": "Azerbaijan",
+        "flag": "https://cdn.sofifa.org/flags/5.png"
+    },
+    {
+        "name": "Comoros",
+        "flag": "https://cdn.sofifa.org/flags/214.png"
+    },
+    {
+        "name": "Equatorial Guinea",
+        "flag": "https://cdn.sofifa.org/flags/112.png"
+    },
+    {
+        "name": "Niger",
+        "flag": "https://cdn.sofifa.org/flags/132.png"
+    },
+    {
+        "name": "Guatemala",
+        "flag": "https://cdn.sofifa.org/flags/78.png"
+    },
+    {
+        "name": "El Salvador",
+        "flag": "https://cdn.sofifa.org/flags/76.png"
+    },
+    {
+        "name": "Guam",
+        "flag": "https://cdn.sofifa.org/flags/157.png"
+    },
+    {
+        "name": "Lebanon",
+        "flag": "https://cdn.sofifa.org/flags/171.png"
+    },
+    {
+        "name": "Somalia",
+        "flag": "https://cdn.sofifa.org/flags/139.png"
+    },
+    {
+        "name": "Gibraltar",
+        "flag": "https://cdn.sofifa.org/flags/205.png"
+    },
+    {
+        "name": "Montserrat",
+        "flag": "https://cdn.sofifa.org/flags/84.png"
+    },
+    {
+        "name": "Mauritius",
+        "flag": "https://cdn.sofifa.org/flags/128.png"
+    },
+    {
+        "name": "India",
+        "flag": "https://cdn.sofifa.org/flags/159.png"
+    },
+    {
+        "name": "Kazakhstan",
+        "flag": "https://cdn.sofifa.org/flags/165.png"
+    },
+    {
+        "name": "Antigua & Barbuda",
+        "flag": "https://cdn.sofifa.org/flags/63.png"
+    },
+    {
+        "name": "Palestine",
+        "flag": "https://cdn.sofifa.org/flags/180.png"
+    },
+    {
+        "name": "Thailand",
+        "flag": "https://cdn.sofifa.org/flags/188.png"
+    },
+    {
+        "name": "Guyana",
+        "flag": "https://cdn.sofifa.org/flags/79.png"
+    },
+    {
+        "name": "Namibia",
+        "flag": "https://cdn.sofifa.org/flags/131.png"
+    },
+    {
+        "name": "Faroe Islands",
+        "flag": "https://cdn.sofifa.org/flags/16.png"
+    },
+    {
+        "name": "St Lucia",
+        "flag": "https://cdn.sofifa.org/flags/90.png"
+    },
+    {
+        "name": "Turkmenistan",
+        "flag": "https://cdn.sofifa.org/flags/189.png"
+    },
+    {
+        "name": "Barbados",
+        "flag": "https://cdn.sofifa.org/flags/66.png"
+    },
+    {
+        "name": "Puerto Rico",
+        "flag": "https://cdn.sofifa.org/flags/88.png"
+    },
+    {
+        "name": "Grenada",
+        "flag": "https://cdn.sofifa.org/flags/77.png"
+    },
+    {
+        "name": "Belize",
+        "flag": "https://cdn.sofifa.org/flags/67.png"
+    },
+    {
+        "name": "Ethiopia",
+        "flag": "https://cdn.sofifa.org/flags/114.png"
+    },
+    {
+        "name": "Sudan",
+        "flag": "https://cdn.sofifa.org/flags/141.png"
+    },
+    {
+        "name": "Swaziland",
+        "flag": "https://cdn.sofifa.org/flags/142.png"
+    },
+    {
+        "name": "Sri Lanka",
+        "flag": "https://cdn.sofifa.org/flags/185.png"
+    },
+    {
+        "name": "Malta",
+        "flag": "https://cdn.sofifa.org/flags/32.png"
+    },
+    {
+        "name": "Liberia",
+        "flag": "https://cdn.sofifa.org/flags/122.png"
+    },
+    {
+        "name": "Afghanistan",
+        "flag": "https://cdn.sofifa.org/flags/149.png"
+    },
+    {
+        "name": "San Marino",
+        "flag": "https://cdn.sofifa.org/flags/41.png"
+    },
+    {
+        "name": "Kyrgyzstan",
+        "flag": "https://cdn.sofifa.org/flags/169.png"
+    },
+    {
+        "name": "Hong Kong",
+        "flag": "https://cdn.sofifa.org/flags/158.png"
+    },
+    {
+        "name": "Burundi",
+        "flag": "https://cdn.sofifa.org/flags/102.png"
+    },
+    {
+        "name": "Brunei Darussalam",
+        "flag": "https://cdn.sofifa.org/flags/153.png"
+    }
+]
