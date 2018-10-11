@@ -139,15 +139,15 @@ app.post('/api/v1/countries', (request, response) => {
 });
 
 app.put('/api/v1/users/:id/:player/players/:player_id', (req, res) => {
-  const userPosition = `player_id_${req.params.player}`;
+	const userPosition = `player_id_${req.params.player}`;
+	if (req.params.player === 0 || req.params.player > 12) {
+		return res.status(422).json({
+			msg: `Users player_id_${req.params.player} does not exist`
+		});
+	}
   database('players')
     .where('id', req.params.player_id)
     .then(player => {
-      if (req.params.player === 0 || req.params.player > 12) {
-        res.status(422).json({
-          msg: `Users player_id_${req.params.player} does not exist`
-        });
-      }
       database('users')
         .where('id', req.params.id)
         .update({ [userPosition]: player[0].id })
