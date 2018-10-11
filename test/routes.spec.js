@@ -662,7 +662,7 @@ describe('API Routes', () => {
           });
       });
     });
-}););
+  });
 
   describe('DELETE', () => {
     describe('/api/v1/users/:id', () => {
