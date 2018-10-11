@@ -662,4 +662,20 @@ describe('API Routes', () => {
           });
       });
     });
-});
+}););
+
+  describe('DELETE', () => {
+    describe('/api/v1/users/:id', () => {
+      it('should delete a user if correct parameters are given', done => {
+        chai
+          .request(app)
+          .delete('/api/v1/users/1')
+          .end((err, res) => {
+            res.should.have.status(202);
+            res.should.be.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal('user successfully deleted');
+            done();
+          });
+      });
+
