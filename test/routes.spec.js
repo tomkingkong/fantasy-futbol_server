@@ -552,6 +552,30 @@ describe('API Routes', () => {
       });
     });
 
+    describe('/api/v1/countries', () => {
+      let optionsObj;
+      it('should add a new country if correct body is given', done => {
+        optionsObj = {
+          name: 'Italy',
+          group: 'E',
+          flag: 'https://cdn.sofifa.org/flags/52.png'
+        };
+
+        chai
+          .request(app)
+          .post('/api/v1/countries')
+          .send(optionsObj)
+          .end((err, res) => {
+            res.should.have.status(201);
+            res.should.be.json;
+            res.body.should.have.property('msg');
+            res.body.msg.should.equal(
+              'Italy was added to countries list with an id of 3'
+            );
+            done();
+          });
+      });
+
 		// });
 	});
 });
