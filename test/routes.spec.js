@@ -461,8 +461,6 @@ describe('API Routes', () => {
           res.body[0].password.should.equal('password');
           res.body[0].player_id_1.should.equal(1);
           res.body[0].player_id_2.should.equal(2);
-          // res.body[0].player_id_3.should.equal(2);
-
           res.body[0].should.have.property('username');
           res.body[0].should.have.property('password');
           res.body[0].should.have.property('player_id_1');
@@ -479,6 +477,7 @@ describe('API Routes', () => {
           done();
         });
     });
+
 
     it('/api/v1/users/:id : should retrieve a specific user with given id', done => {
       chai
@@ -557,7 +556,6 @@ describe('API Routes', () => {
           name: 'Italy',
           flag: 'https://cdn.sofifa.org/flags/52.png'
         };
-
         chai
           .request(app)
           .post('/api/v1/countries')
@@ -624,6 +622,7 @@ describe('API Routes', () => {
       //     });
       // });
     });
+
     describe('/api/v1/users/:id', () => {
       let optionsObj;
       it('should update user information if correct body is given', done => {
