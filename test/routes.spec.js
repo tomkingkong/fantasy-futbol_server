@@ -343,10 +343,10 @@ describe('API Routes', () => {
         });
     });
 
-    it('/api/v1/players/:id : should a specific player by given id', done => {
+    it('/api/v1/countries/:id/players : should a specific player by given id', done => {
       chai
         .request(app)
-        .get('/api/v1/country/1/players')
+        .get('/api/v1/countries/1/players')
         .end((err, res) => {
           res.should.have.status(200);
           res.should.be.json;
