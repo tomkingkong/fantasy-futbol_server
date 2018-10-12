@@ -1,31 +1,68 @@
 ## Soccor
 
-> GET: `/api/v1/countries`
+> GET: `/api/v1/countries` (Get all Countries)
 
     - Parameters: none
-    - Response: All 162 Country names with respective flag logo
+    - Response: array of country objects
 
-> GET: `/api/v1/players`
+> GET: `/api/v1/players` (Get all players)
 
     - Parameters: none
-    - Response: All Players personal information and in-game stats
+    - Response: 
+        code 200: Array of player objects
+        code 4xx, 5xx: error message
 
-> GET: `/api/v1/players/:id`
+> GET: `/api/v1/players/:id` (Get player by id)
 
-    - Request Parameter: player id
-    - Response: Player personal information and in-game stats
+    - Request Parameters: player_id
+    - Response: 
+        code 200: array of the player object
+        code 4xx, 5xx: error message
     
-> GET:  `/api/v1/country/:id/players
+> GET:  `/api/v1/country/:id/players (Get all players by country id)
 
-    - Request Parameter: country id
-    - Response: Players associated with a specific country id
+    - Request Parameters: country_id
+    - Response: 
+        code 200: Array of Player objects associated with the country_id
+        code 4xx, 5xx: error message
 
-> GET:  `/api/v1/users/
+> GET:  `/api/v1/users` (Get all users)
 
     - Parameters: None
-    - Response: Returns all users
+    - Response: 
+        code 200: Array of user objects
+        code 4xx, 5xx: error message
     
-> GET:  `/api/v1/users/:id
+> GET:  `/api/v1/users/:id` (Get user by id)
 
-    - Request Parameter: user id
-    - Response: User info
+    - Request Parameters: user id
+    - Response: 
+        code 200: array of the user object
+        code 4xx, 5xx: error message
+
+>POST: `/api/v1/users` (Add a new user)
+
+    - Parameters:
+        username: [username of user]
+        password: [password of user]
+    - Response: 
+        code 201: username created message
+        code 422: error message
+        
+>POST: `/api/v1/countries` (Add a new country)
+
+    - Parameters: 
+        country: [country name]
+        flag: [image url of country flag]
+    - Response: 
+        code 201: country created message
+        code 422: error message 
+        
+>PUT: `/api/v1/users/:id/:player/players/:player_id` (replace a player to users team)
+
+    - Request Parameters: 
+        
+    
+    
+    
+    
