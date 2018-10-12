@@ -26,14 +26,22 @@ app.get('/api/v1/countries', (request, response) => {
     });
 });
 
-app.get('/api/v1/players', (request, response) => {
-  database('players')
-    .then(players => response.status(200).json(players))
-    .catch(error => {
-      response.status(500).json({
-        error
-      });
-    });
+app.get('/api/v1/players', (req, res) => {
+	const playerName = req.query.name
+	playerName 
+	? database('players')
+			.where('Name', playerName)
+			.then(player => {
+				res.status(200).json(player)
+			})
+	:
+		database('players')
+			.then(players => res.status(200).json(players))
+			.catch(error => {
+				res.status(500).json({
+					error
+				});
+			});
 });
 
 app.get('/api/v1/players/:id', (request, response) => {
