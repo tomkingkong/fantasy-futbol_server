@@ -16,7 +16,7 @@
 
     - Request Parameters: player_id
     - Response: 
-        code 200: array of the player object
+        code 200: Array of the player object
         code 4xx, 5xx: error message
     
 > GET:  `/api/v1/country/:id/players (Get all players by country id)
@@ -33,9 +33,10 @@
         code 200: Array of user objects
         code 4xx, 5xx: error message
     
-> GET:  `/api/v1/users/:id` (Get user by id)
+> GET:  `/api/v1/users/:id` (Get user info by id)
 
-    - Request Parameters: user id
+    - Request Parameters: 
+        user id: [user_id]
     - Response: 
         code 200: array of the user object
         code 4xx, 5xx: error message
@@ -61,8 +62,28 @@
 >PUT: `/api/v1/users/:id/:player/players/:player_id` (replace a player to users team)
 
     - Request Parameters: 
-        
+        user id: [user_id]
+        team player number: [column number of player]
+        player id: [player_id]
+    - Response:
+        code 201: player created message 
+        code 422: error message 
+
+>PUT: `/api/v1/users/:id/` (edit a users info)
     
+    - Request Parameters: 
+        user id: [user_id]
+    - Body Parameters: 
+        username: [new username]
+        password: [new password]   
+    - Response:
+        code 201: updated user info message
+        code 422: error message 
+
+>DELETE: `/api/v1/users/:id` (delete a user)
     
-    
+    - Request Parameters:
+        user id: [user_id]
+    - 
+
     
