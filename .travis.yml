@@ -7,3 +7,4 @@ services:
 
 before_script:
   - psql -c 'create database soccor;' -U postgres
+  - psql -c 'create database soccor_test;' -U postgres
