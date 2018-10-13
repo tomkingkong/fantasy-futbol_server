@@ -4,12 +4,15 @@
   "description": "BYOB",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --exit"
+    "test": "NODE_ENV=test mocha --exit",
+    "server": "nodemon server.js",
+    "start": "concurrently \"npm run server\" \"npm start --prefix client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "csvtojson": "^2.0.8",
     "eslint": "^5.6.1",
     "express": "^4.16.3",
