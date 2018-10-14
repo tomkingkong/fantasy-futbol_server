@@ -5,36 +5,35 @@ const configure = require('../../../knexfile')[env];
 const database = require('knex')(configure);
 
 router.get('/', (req, res) => {
-	console.log(req.query)
-	const start = req.query.start
-	const end = req.query.end
-
-	database('players')
-		.whereBetween('id', [start, end])
-		.then(player => {
-			res.status(200).json(player)
-		})
+  const { start, end, name, club } = req.query;
+  try {
+    if (start) {
+      database('players')
+        .whereBetween('id', [start, end])
+        .then(player => {
+          res.status(200).json(player);
+        });
+    } else if (name) {
+      database('players')
+        .where('Name', name)
+        .then(player => {
+          res.status(200).json(player);
+        });
+    } else if (club) {
+      database('players')
+        .where('Club', club)
+        .then(player => {
+          res.status(200).json(player);
+        });
+    } else {
+      database('players').then(players => res.status(200).json(players));
+    }
+  } catch (err) {
+    res.status(500).json({
+      err
+    });
+  }
 });
-
-// router.get('/', (req, res) => {
-// 	const playerName = req.query.name
-// 	playerName
-// 		?
-// 		database('players')
-// 		.where('Name', playerName)
-// 		.then(player => {
-// 			res.status(200).json(player)
-// 		}) :
-// 		database('players')
-// 		.then(players => res.status(200).json(players))
-// 		.catch(error => {
-// 			res.status(500).json({
-// 				error
-// 			});
-// 		});
-// });
-
-
 
 router.get('/:id', (request, response) => {
 	const {
