@@ -1,4 +1,40 @@
-## Soccor
+## Fantasy Futbol
+
+### Getting Started
+
+- Clone down this repo
+- Ensure PostGres is installed and running 
+
+> In the Terminal
+
+- Installing packages
+
+
+    $ npm install
+    
+
+- Creating a Database on Postgress
+    
+    
+    $ psql
+    
+    $ CREATE DATABASE soccor
+    
+    $ \q
+    
+     
+- Migrating and seeding
+
+
+    $ knex migrate:latest
+    
+    $ knex seed:run
+    
+
+    
+
+
+### Endpoints
 
 > GET: `/api/v1/countries` (Get all Countries)
 
@@ -84,6 +120,8 @@
     
     - Request Parameters:
         user id: [user_id]
-    - 
+    - Response:
+    	code 201: deleted user info message
+        code 422: error message
 
     
