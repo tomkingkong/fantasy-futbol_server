@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const env = process.env.NODE_ENV || 'development';
 const configure = require('./knexfile')[env];
@@ -11,6 +12,7 @@ const players = require('./routes/api/v1/players');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
   next();
@@ -21,7 +23,7 @@ app.use(
   })
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3010;
 
 app.use('/api/v1/users', users);
 app.use('/api/v1/countries', countries);
