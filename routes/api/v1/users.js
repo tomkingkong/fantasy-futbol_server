@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
 const env = process.env.NODE_ENV || 'development';
 const configure = require('../../../knexfile')[env];
 const database = require('knex')(configure);
@@ -32,12 +32,12 @@ router.post('/', (request, response) => {
   database('users')
     .insert(user, 'id')
     .then(user => {
-      username || password
-        ? response.status(201).json({
-            msg: `Username: ${username} was created with id of ${user[0]}`
-          })
-        : response.status(422).json({
+      !username
+        ? response.status(422).json({
             msg: `Missing one or more fields`
+          })
+        : response.status(201).json({
+            msg: `Username: ${username} was created with id of ${user[0]}`
           });
     })
     .catch(error => {
@@ -48,12 +48,12 @@ router.post('/', (request, response) => {
 });
 
 router.put('/:id/:player/players/:player_id', (req, res) => {
-	const userPosition = `player_id_${req.params.player}`;
-	if (req.params.player === 0 || req.params.player > 12) {
-		return res.status(422).json({
-			msg: `Users player_id_${req.params.player} does not exist`
-		});
-	}
+  const userPosition = `player_id_${req.params.player}`;
+  if (req.params.player === 0 || req.params.player > 12) {
+    return res.status(422).json({
+      msg: `Users player_id_${req.params.player} does not exist`
+    });
+  }
   database('players')
     .where('id', req.params.player_id)
     .then(player => {
@@ -124,4 +124,4 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-module.exports = router
+module.exports = router;
