@@ -3,6 +3,7 @@ const router = express.Router()
 const env = process.env.NODE_ENV || 'development';
 const configure = require('../../../knexfile')[env];
 const database = require('knex')(configure);
+const cors = require('cors')
 
 router.get('/', (request, response) => {
   database('users')
@@ -26,7 +27,7 @@ router.get('/:id', (request, response) => {
     });
 });
 
-router.post('/', (request, response) => {
+router.post('/', cors(), (request, response) => {
   const { username, password } = request.body;
   const user = { username, password };
   database('users')
