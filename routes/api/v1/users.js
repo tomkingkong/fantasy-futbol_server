@@ -76,31 +76,21 @@ router.put('/:id/:player/players/:player_id', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
-  const { username, password } = req.body;
+router.put('/:id/:player', (req, res) => {
+  const userPosition = `player_id_${req.params.player}`;
   database('users')
     .where('id', req.params.id)
-    .update({ username, password })
+		.update({ [userPosition]: null})
     .then(() => {
-      if (username && password) {
         res.status(202).json({
-          msg: `edited user {username: ${req.body.username}, password: ${
-            req.body.password
-          }}`
+          msg: `deleted player from users team`
         });
-      }
     })
     .catch(error => {
-      if (!username || !password) {
-        res.status(422).json({
-          error: 'Incorrect fields'
-        });
-      } else {
         res.status(500).json({
           error
         });
-      }
-    });
+      })
 });
 
 router.delete('/:id', (req, res) => {
