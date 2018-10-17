@@ -3,7 +3,7 @@ const router = express.Router();
 const env = process.env.NODE_ENV || 'development';
 const configure = require('../../../knexfile')[env];
 const database = require('knex')(configure);
-const cors = require('cors');
+const cors = require('cors')
 
 router.get('/', (request, response) => {
   database('users')
@@ -64,8 +64,7 @@ router.put('/:id/:player/players/:player_id', (req, res) => {
         .then(() => {
           if (req.params.player > 0 && req.params.player < 13) {
             res.status(201).json({
-              msg: `${userPosition} was edited`,
-              player: player
+              msg: `${userPosition} was edited`
             });
           }
         });
