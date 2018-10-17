@@ -27,7 +27,7 @@ router.get('/:id', (request, response) => {
     });
 });
 
-router.post('/', cors(), (request, response) => {
+router.post('/', (request, response) => {
   const { username, password } = request.body;
   const user = { username, password };
   database('users')
