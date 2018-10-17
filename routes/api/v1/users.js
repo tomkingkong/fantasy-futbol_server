@@ -64,7 +64,8 @@ router.put('/:id/:player/players/:player_id', (req, res) => {
         .then(() => {
           if (req.params.player > 0 && req.params.player < 13) {
             res.status(201).json({
-              msg: `${userPosition} was edited`
+							msg: `${userPosition} was edited`,
+							player: player
             });
           }
         });
