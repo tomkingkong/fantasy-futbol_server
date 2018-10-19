@@ -13,27 +13,23 @@
     $ npm install
     
 
-- Creating a Database on Postgress
+- Creating the Databases on Postgress
     
-    
-    $ psql
-    
-    $ CREATE DATABASE soccor
-    
-    $ \q
+        $ psql;
+        $ CREATE DATABASE soccor;
+        $ CREATE DATABASE soccor-test
+        $ \q
     
      
 - Migrating and seeding
 
 
-    $ knex migrate:latest
+        $ knex migrate:latest
     
-    $ knex seed:run
-    
-
+        $ knex seed:run
     
 
-
+  
 ### Endpoints
 
 > GET: `/api/v1/countries` (Get all Countries)
