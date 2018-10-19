@@ -5,13 +5,15 @@
 - Clone down this repo
 - Ensure PostGres is installed and running 
 
-> In the Terminal
+#### In the Terminal
 
 - Installing packages
 
+        $ npm install
 
-    $ npm install
-    
+- Starting Server
+
+        $ node server.js
 
 - Creating the Databases on Postgress
     
@@ -20,15 +22,15 @@
         $ CREATE DATABASE soccor-test
         $ \q
     
-     
 - Migrating and seeding
-
 
         $ knex migrate:latest
     
         $ knex seed:run
     
-
+- Running Testing suite
+        
+        $ npm test
   
 ### Endpoints
 
