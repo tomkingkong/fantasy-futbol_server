@@ -35,21 +35,21 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get('/:id', (request, response) => {
+router.get('/:id', (req, res) => {
 	const {
 		id
-	} = request.params;
+	} = req.params;
 	database('players')
 		.where('id', id)
 		.then(player => {
 			player.length ?
-				response.status(200).json(player) :
+				res.status(200).json(player) :
 				reponse.status(404).send({
 					error: 'player does not exist'
 				});
 		})
 		.catch(error => {
-			response.status(500).json({
+			res.status(500).json({
 				error
 			});
 		});

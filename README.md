@@ -108,8 +108,10 @@
     - Request Parameters: 
         user id: [user_id]
     - Body Parameters: 
-        username: [new username]
-        password: [new password]   
+        username: [username]
+        password: [password]   
+        newName: [new username]
+        password: [new password]
     - Response:
         code 201: updated user info message
         code 422: error message 
