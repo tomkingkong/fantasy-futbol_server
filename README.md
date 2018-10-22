@@ -1,4 +1,4 @@
-## Fantasy Futbol
+## Fantasy Futbol 
 
 ### Getting Started
 
